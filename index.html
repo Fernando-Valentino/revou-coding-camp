@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat Clicker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+
+  <!-- Cat_Display -->
+  <div id="cat-display" class="flex flex-col items-center gap-4 max-w-sm w-full">
+
+    <!-- Cat_Name -->
+    <h1 id="cat-name" class="text-2xl font-bold text-gray-800">Whiskers</h1>
+
+    <!-- Cat_Image (klikable) -->
+    <img
+      id="cat-image"
+      src="https://placekitten.com/400/400"
+      alt="Whiskers"
+      onerror="this.src='https://placehold.co/400x400?text=Cat'"
+      class="cursor-pointer rounded-xl w-full max-w-xs min-w-[100px] min-h-[100px] object-contain"
+    />
+
+    <!-- Reaction overlay (tersembunyi secara default) -->
+    <p id="reaction-text" aria-live="polite" hidden class="text-lg font-semibold text-gray-700"></p>
+
+    <!-- Score_Display -->
+    <p id="score-display" class="text-base text-gray-600">
+      Klik: <span id="click-count">0</span>
+    </p>
+
+  </div>
+
+  <!-- Fallback untuk browser tanpa JavaScript -->
+  <noscript>
+    <p style="text-align:center; padding: 2rem; font-family: sans-serif;">
+      Browser Anda tidak mendukung JavaScript. Silakan gunakan browser modern seperti Chrome 80+, Firefox 75+, Edge 80+, atau Safari 13+.
+    </p>
+  </noscript>
+
+  <script src="reaction-engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
